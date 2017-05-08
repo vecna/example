@@ -1,0 +1,47 @@
+doctype html
+html
+    head
+        meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+        title #{pageTitle}
+
+        link(rel='stylesheet', href='/css/bootstrap.css')
+        script(type='text/javascript', src='/js/vendor/jquery.js')
+        script(type='text/javascript', src='/js/bootstrap.min.js')
+        script(type='text/javascript', src='/js/lodash.min.js')
+
+        script(type='text/javascript', src='js/vendor/d3.min.js')
+        script(type='text/javascript', src='js/vendor/d3-sankey.min.js')
+
+        script(type='text/javascript', src='js/local/trex.js')
+        link(rel='stylesheet', href='js/local/trex.css')
+
+        script(type='text/javascript', src='/campaign/example.js')
+        link(rel='stylesheet', href='/campaign/example.css')
+
+        meta(property='og:title', content='#{previewTitle}')
+        meta(property='og:image', content='campaign/#{previewImage}')
+        meta(property='og:url', content='#{previewURL}')
+        meta(property='og:type', content='#{previewTYPE}')
+        meta(property='og:description', content='#{previewDescription}')
+
+    body(onload='setupLanding();')
+
+        nav.navbar.navbar-default.navbar-fixed-top
+            .container
+                ul.nav.navbar-nav
+                    li(class="landing")
+                        a(onclick='loadPage("#content", "landing");' class='links') Home
+                    li(class="what-to-do")
+                        a(onclick='loadPage("#content", "what-to-do");' class='links') What to do
+                    li(class="about")
+                        a(onclick='loadPage("#content", "about");' class='links') About
+                    li.dropdown
+                        a.dropdown-toggle(data-toggle='dropdown', href='#') Other initiatives
+                            span.caret
+                        ul.dropdown-menu
+                            li
+                                include otherInitiatives
+
+        div#content
+
+        include footer

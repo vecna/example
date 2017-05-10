@@ -1,36 +1,39 @@
-.container
-    .firstcontent
-        h3 Example: how an invi.sible.link product looks like?
-        p.text Well, welcome, looks exactly like this!
+.container.firstcontent
+    h3 Example: how an invi.sible.link product looks like?
+    p.text Well, welcome, looks exactly like this!
 
     h3 Two categories below
     ul
-        li The first is Brazil, contains ~80 brasilian website analized during the months
-        li the second are just examples, some websites matching the word: 
+        li
+            b Brazil
+            |: contains ~80 brasilian website analized during the months
+        li 
+            b Example
+            |: just the first random pages matching the word: 
             i example
+            |  on search engines.
 
     ul.nav.nav-tabs.nav-justified.reduced
         li#halal(role='presentation')
-            a(onclick="trexRender('brazil', '#table');")
-                img(src='/campaign/brazil.png')
+            a(onclick="trexRender('brazil', '#sankeytable');")
+                img(width="100" height="100" src='/campaign/brazil.png')
             p.idesc.selected Brazil
         li#travel(role='presentation')
-            a(onclick="trexRender('example', '#table');")
-                img(src='/campaign/example.png')
-            p.idesc `example`
-    #table
+            a(onclick="trexRender('example', '#sankeytable');")
+                img(width="100" height="100" src='/campaign/example.png')
+            p.idesc example
+    #sankeytable
 
 .container
     .yellow
-        p.quote Among all the products of the
-            i food industry
-            |  Pizza, is the only one with active
+        p.quote Among all the products of the 
+            i food industry,
+            |  Pizza, is the only one with active 
             b Magic
             |  on it.
     
         p(class="source")
-            a(href="https://en.wikipedia.org/wiki/Pizza") Pizza
+            a(href="https://en.wikipedia.org/wiki/History_of_pizza") Queen Margherita
 
-    p.text Above you saw a quote, I use quotation when I want other person trustwothyness speaking for me. Margherita Queens of Naples, in the case above.
 
 include footer

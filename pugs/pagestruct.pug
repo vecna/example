@@ -18,13 +18,16 @@ html
         script(type='text/javascript', src='/campaign/example.js')
         link(rel='stylesheet', href='/campaign/example.css')
 
+        link(rel='stylesheet', type='text/css', href='/css/datatables.min.css')
+        script(type='text/javascript', charset='utf8', src='/js/datatables.min.js')
+
         meta(property='og:title', content='#{previewTitle}')
         meta(property='og:image', content='campaign/#{previewImage}')
         meta(property='og:url', content='#{previewURL}')
         meta(property='og:type', content='#{previewTYPE}')
         meta(property='og:description', content='#{previewDescription}')
 
-    body(onload='setupLanding();')
+    body(onload='initializeLanding(null, "example", "Lore ipsum is bullshit", "#sankeytable");')
 
         nav.navbar.navbar-default.navbar-fixed-top
             .container
@@ -33,6 +36,8 @@ html
                         a(onclick='loadPage("#content", "landing");' class='links') Home
                     li(class="what-to-do")
                         a(onclick='loadPage("#content", "what-to-do");' class='links') What to do
+                    li(class="archive")
+                        a(onclick='loadPage("#content", "archive");' class='links') Analysis Details
                     li(class="about")
                         a(onclick='loadPage("#content", "about");' class='links') About
                     li.dropdown
@@ -42,6 +47,7 @@ html
                             li
                                 include otherInitiatives
 
+        // do not rename `content` because it is hardcoded in trex.js
         div#content
 
         include footer

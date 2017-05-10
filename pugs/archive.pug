@@ -1,21 +1,33 @@
 .container.firstcontent
     h3 Full results
 
-    p.text This is a table containing all the results of the list, some better visualization might be developed when they get requested.
+    p.text This is a table containing all the results of the analized sites. We are just considering the analysis result produced in the last 36 hours. Some better visualization might be developed when they get requested.
+        b  Click on the website to see more
 
     ul.nav.nav-tabs.nav-justified.reduced
         li#halal(role='presentation')
-            a(onclick="trexArchive('brazil', '#archivetable', '#subjects');")
+            a(onclick="trexArchive('brazil', '#archivetable');")
                 img(width="100" height="100" src='/campaign/brazil.png')
             p.idesc.selected Brazil
         li#travel(role='presentation')
-            a(onclick="trexArchive('example', '#archivetable', '#subjects');")
+            a(onclick="trexArchive('example', '#archivetable');")
                 img(width="100" height="100" src='/campaign/example.png')
             p.idesc example
-    #archivetable
 
-    h3 Subject under analysis
-    p.text This is the list of the website under analysis
-    #subjects
+    table#archivetable.display(cellspacing='0', width='100%')
+        thead
+            tr
+                th Site
+                th Companies
+                th scripts
+                th unique 3rd parties
+                th when
+        tfood
+            tr
+                th Site
+                th Companies
+                th scripts
+                th unique 3rd parties
+                th when
 
 
